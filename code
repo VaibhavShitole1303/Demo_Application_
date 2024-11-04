@@ -1,0 +1,96 @@
+package com.example.myapplication
+
+import android.os.Bundle
+import android.text.TextUtils
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ProgressBar
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var editTextName: EditText
+    private lateinit var editTextMobile: EditText
+    private lateinit var editTextEmail: EditText
+    private lateinit var editTextCity: EditText
+    private lateinit var editTextPassword: EditText
+    private lateinit var editTextConfirmPassword: EditText
+    private lateinit var buttonRegister: Button
+    private lateinit var progressBar: ProgressBar
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        editTextName = findViewById(R.id.editTextName)
+        editTextMobile = findViewById(R.id.editTextMobile)
+        editTextEmail = findViewById(R.id.editTextEmail)
+        editTextCity = findViewById(R.id.editTextCity)
+        editTextPassword = findViewById(R.id.editTextPassword)
+        editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword)
+        buttonRegister = findViewById(R.id.buttonRegister)
+        progressBar = findViewById(R.id.progressBar)
+
+        buttonRegister.setOnClickListener {
+            if (validateInputs()) {
+                performRegistration()
+            }
+        }
+    }
+
+    private fun validateInputs(): Boolean {
+        val name = editTextName.text.toString().trim()
+        val mobile = editTextMobile.text.toString().trim()
+        val email = editTextEmail.text.toString().trim()
+        val city = editTextCity.text.toString().trim()
+        val password = editTextPassword.text.toString().trim()
+        val confirmPassword = editTextConfirmPassword.text.toString().trim()
+
+        return when {
+            TextUtils.isEmpty(name) -> {
+                showToast("Please enter your name")
+                false
+            }
+            TextUtils.isEmpty(mobile) || !mobile.matches("\\d{10}".toRegex()) -> {
+                showToast("Please enter a valid mobile number")
+                false
+            }
+            TextUtils.isEmpty(email) || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
+                showToast("Please enter a valid email")
+                false
+            }
+            TextUtils.isEmpty(city) -> {
+                showToast("Please enter your city")
+                false
+            }
+            TextUtils.isEmpty(password) || password.length < 6 -> {
+                showToast("Password must be at least 6 characters")
+                false
+            }
+            password != confirmPassword -> {
+                showToast("Passwords do not match")
+                false
+            }
+            else -> true
+        }
+    }
+
+    private fun performRegistration() {
+        progressBar.visibility = ProgressBar.VISIBLE
+        // Simulate a network call or registration logic here
+        buttonRegister.isEnabled = false
+
+        // For demonstration, just use a delayed handler
+        editTextName.postDelayed({
+            progressBar.visibility = ProgressBar.GONE
+            buttonRegister.isEnabled = true
+            showToast("Registration Successful")
+            // You can navigate to another activity or perform further actions here
+        }, 2000)
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+}
