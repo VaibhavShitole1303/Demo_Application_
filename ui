@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:padding="10dp"
+        android:background="@drawable/rounded_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextMobile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Mobile Number"
+        android:padding="10dp"
+        android:background="@drawable/rounded_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName"
+        android:layout_margin="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:padding="10dp"
+        android:background="@drawable/rounded_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMobile"
+        android:layout_margin="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextCity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="City"
+        android:padding="10dp"
+        android:background="@drawable/rounded_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
+        android:layout_margin="16dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/cl_p"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp">
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:padding="10dp"
+            android:background="@drawable/rounded_edit_text"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewTogglePassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/imageViewTogglePassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_visibility_off"
+            android:visibility="gone"
+        android:contentDescription="Toggle password visibility"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editTextPassword"
+        android:clickable="true"
+        android:focusable="true"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/cl_cp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_p"
+        android:layout_margin="16dp">
+
+        <EditText
+            android:id="@+id/editTextConfirmPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:padding="10dp"
+            android:background="@drawable/rounded_edit_text"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewToggleConfirmPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/imageViewToggleConfirmPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_visibility_off"
+            android:visibility="gone"
+        android:contentDescription="Toggle confirm password visibility"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editTextConfirmPassword"
+        android:clickable="true"
+        android:focusable="true"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_cp"
+        android:layout_margin="16dp"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRegister"
+        android:layout_marginTop="16dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--    <?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--xmlns:tools="http://schemas.android.com/tools"-->
+<!--xmlns:material="http://schemas.android.com/apk/res-auto"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--tools:context=".MainActivity">-->
+
+<!--<com.google.android.material.textfield.TextInputLayout-->
+<!--    android:id="@+id/textInputName"-->
+<!--    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_margin="16dp"-->
+<!--    app:hintEnabled="true"-->
+<!--    app:hintAnimationEnabled="true"-->
+<!--    app:boxStrokeColor="@android:color/darker_gray">-->
+
+<!--    <com.google.android.material.textfield.TextInputEditText-->
+<!--        android:id="@+id/editTextName"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Name"-->
+<!--        android:backgroundTint="@android:color/transparent"/>-->
+<!--</com.google.android.material.textfield.TextInputLayout>-->
+
+<!--<com.google.android.material.textfield.TextInputLayout-->
+<!--    android:id="@+id/textInputMobile"-->
+<!--    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_margin="16dp"-->
+<!--    app:hintEnabled="true"-->
+<!--    app:hintAnimationEnabled="true"-->
+<!--    app:boxStrokeColor="@android:color/darker_gray"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/textInputName">-->
+
+<!--    <com.google.android.material.textfield.TextInputEditText-->
+<!--        android:id="@+id/editTextMobile"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Mobile Number"-->
+<!--        android:inputType="phone"-->
+<!--        android:backgroundTint="@android:color/transparent"/>-->
+<!--</com.google.android.material.textfield.TextInputLayout>-->
+
+<!--<com.google.android.material.textfield.TextInputLayout-->
+<!--    android:id="@+id/textInputEmail"-->
+<!--    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_margin="16dp"-->
+<!--    app:hintEnabled="true"-->
+<!--    app:hintAnimationEnabled="true"-->
+<!--    app:boxStrokeColor="@android:color/darker_gray"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/textInputMobile">-->
+
+<!--    <com.google.android.material.textfield.TextInputEditText-->
+<!--        android:id="@+id/editTextEmail"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Email"-->
+<!--        android:inputType="textEmailAddress"-->
+<!--        android:backgroundTint="@android:color/transparent"/>-->
+<!--</com.google.android.material.textfield.TextInputLayout>-->
+
+<!--<com.google.android.material.textfield.TextInputLayout-->
+<!--    android:id="@+id/textInputCity"-->
+<!--    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_margin="16dp"-->
+<!--    app:hintEnabled="true"-->
+<!--    app:hintAnimationEnabled="true"-->
+<!--    app:boxStrokeColor="@android:color/darker_gray"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/textInputEmail">-->
+
+<!--    <com.google.android.material.textfield.TextInputEditText-->
+<!--        android:id="@+id/editTextCity"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="City"-->
+<!--        android:backgroundTint="@android:color/transparent"/>-->
+<!--</com.google.android.material.textfield.TextInputLayout>-->
+
+<!--<com.google.android.material.textfield.TextInputLayout-->
+<!--    android:id="@+id/textInputPassword"-->
+<!--    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_margin="16dp"-->
+<!--    app:hintEnabled="true"-->
+<!--    app:hintAnimationEnabled="true"-->
+<!--    app:boxStrokeColor="@android:color/darker_gray"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/textInputCity">-->
+
+<!--    <com.google.android.material.textfield.TextInputEditText-->
+<!--        android:id="@+id/editTextPassword"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Password"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:backgroundTint="@android:color/transparent"/>-->
+<!--</com.google.android.material.textfield.TextInputLayout>-->
+
+<!--<com.google.android.material.textfield.TextInputLayout-->
+<!--    android:id="@+id/textInputConfirmPassword"-->
+<!--    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_margin="16dp"-->
+<!--    app:hintEnabled="true"-->
+<!--    app:hintAnimationEnabled="true"-->
+<!--    app:boxStrokeColor="@android:color/darker_gray"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/textInputPassword">-->
+
+<!--    <com.google.android.material.textfield.TextInputEditText-->
+<!--        android:id="@+id/editTextConfirmPassword"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Confirm Password"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:backgroundTint="@android:color/transparent"/>-->
+<!--</com.google.android.material.textfield.TextInputLayout>-->
+
+<!--<Button-->
+<!--    android:id="@+id/buttonRegister"-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:text="Register"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/textInputConfirmPassword"-->
+<!--    android:layout_margin="16dp"/>-->
+
+<!--<ProgressBar-->
+<!--    android:id="@+id/progressBar"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:visibility="gone"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/buttonRegister"-->
+<!--    android:layout_marginTop="16dp"/>-->
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
